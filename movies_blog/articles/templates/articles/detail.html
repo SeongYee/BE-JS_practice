@@ -1,0 +1,13 @@
+{% extends "articles/base.html" %}
+
+{% block content %}
+    <h2>DETAIL</h2>
+    <h3>{{ article.pk }}번째 글</h3>
+    <hr>
+    <p>제목: {{ article.title }}</p>
+    <p>내용: {{ article.content}}</p>
+    <hr>
+    <a href = "{% url 'articles:edit' pk=article.pk %}">[수정하기]</a>
+    <hr>
+    <a href = "{% url 'articles:index' %}">[back]</a>
+{% endblock content %}

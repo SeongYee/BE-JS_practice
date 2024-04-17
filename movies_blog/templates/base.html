@@ -1,0 +1,18 @@
+azA<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <nav>
+    <a href="{% url "movies:index" %}">[MAIN]</a> | 
+    <a href="{% url "movies:create_movie" %}">[CRAETE]</a>
+    <a href="{% url "accounts:login" %}">[LOGIN]</a>
+    <a href="{% url "reviews:reviews" %}">[REVIEWS]</a>
+  </nav>
+  {% block content %}
+  {% endblock content %}
+</body>
+</html>
