@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .article {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+  </div>
+  <script>
+    const container = document.querySelector('#container')
+    const articleDiv = document.createElement('div')
+    articleDiv.classList.add('article')
+
+    const articleTitle = document.createElement('h1')
+    articleTitle.textContent = 'Article Title'
+
+    const articleContent = document.createElement('p')
+    articleContent.textContent = 'This is a article content'
+    articleContent.style.borderTop = '1px solid black'
+    articleContent.style.paddingTop = '10px'
+
+    articleDiv.appendChild(articleTitle)
+    articleDiv.appendChild(articleContent)
+    container.appendChild(articleDiv)
+  </script>
+</body>
+
+</html>
