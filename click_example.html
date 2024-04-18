@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">클릭하기</button>
+    <p>클릭 수: <span id="counter"> 0 </span></p>
+    <script>
+        // 각 요소 선택
+        const btnElement = document.querySelector('#btn');
+        const spanElement = document.querySelector('#counter');
+
+        // 숫자를 카운트할 변수 선언 
+        let clickCount = 0;
+        // span 태그를 클릭할 경우, 콜백함수 생성
+        const clickSpanTag = (event) => {
+            // 클릭 카운트를 1증가시키고, 태그의 textContent 수정
+            clickCount += 1;
+            spanElement.textContent = clickCount;
+        }
+        // 버튼 요소에 이벤트 핸들러 연결 
+        btnElement.addEventListener('click', clickSpanTag);
+    </script>
+</body>
+</html>

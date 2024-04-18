@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">버튼</button>
+    <script>
+        // id가 btn인 요소 선택
+        const btn = document.getElementById("btn");
+        console.log(btn);
+
+        // 클릭 시 수행할 콜백 함수 생성
+        btnClick = (event) =>{
+            console.log(event)
+            console.log(event.currentTarget)
+            console.log(event.currentTarget.textContent)
+        }
+
+        // 선택한 버튼 요소에 이벤트 핸들러 등록
+        // click 이벤트가 발생할 경우
+        // 이벤트 객체를 btnClick 콜백함수에 전달 후 실행
+        btn.addEventListener('click', btnClick);
+    </script>
+</body>
+</html>

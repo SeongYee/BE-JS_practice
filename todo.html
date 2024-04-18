@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input-text"></input>
+    <button id="btn">+</button>
+    <ul></ul>
+    <script>
+        // 각 요소 선택
+        const inputElement = document.querySelector('#input-text');
+        const btnElement = document.querySelector('#btn');
+        const ulElement = document.querySelector('ul')
+
+        // 버튼 클릭하면 todo 추가 
+        const clickHandler = (event) => {
+            // input에 입력한 값 추출 
+            todo = inputElement.value
+            // li tag 생성
+            const liTag = document.createElement('li')
+            // 생성한 li tag의 값을 input에서 추출한 값으로 설정
+            liTag.textContent = todo
+            // ul 태그 마지막에 litag 추가
+            ulElement.appendChild(liTag)
+            // 인풋창 초기화
+            inputElement.value = ''
+        }
+
+        // 이벤트 핸들러 연결 
+        btnElement.addEventListener('click', clickHandler);
+    </script>
+</body>
+</html>

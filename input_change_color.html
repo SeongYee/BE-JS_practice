@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blue {
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="input-text"></input>
+    <button id="btn">색 변경</button>
+    <p>여기가 바뀌는 곳</p>
+    <script>
+        // 각 요소 선택
+        const inputElement = document.querySelector('#input-text');
+        const pElement = document.querySelector('p');
+        const btnElement = document.querySelector('#btn');
+
+        // input 태그에 입력받을 경우, p태그에 내용 보여주기
+        const inputHandler = (event) => {
+            pElement.textContent = event.currentTarget.value
+        }
+        // 버튼 클릭하면 p 태그 글자색 변경하기(blue class 추가)
+        const clickHandler = (event) => {
+            pElement.classList.toggle('blue')
+        }
+
+        // 이벤트 핸들러 연결 
+        inputElement.addEventListener('input', inputHandler);
+        btnElement.addEventListener('click', clickHandler);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

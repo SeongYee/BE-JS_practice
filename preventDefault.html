@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>복사 불가능</h1>
+    <script>
+        // 각 요소 선택
+        const h1Element = document.querySelector('h1');
+
+        // 복사하면 
+        const copyHandler = (event) => {
+            // 해당 이벤트가 실행되지 않도록 중단!
+            event.preventDefault();
+            alert('복사 불가!')
+        }
+
+        // 이벤트 핸들러 연결 
+        h1Element.addEventListener('copy', copyHandler);
+    </script>
+</body>
+</html>

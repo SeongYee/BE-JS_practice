@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form, div, p {
+            border: black solid 1px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form">
+        form
+        <div id="div">
+            div
+            <p id="p">p</p>
+        </div>
+    </form>
+    <script>
+        const formElement = document.querySelector('#form');
+        const divElement = document.querySelector('#div');
+        const pElement = document.querySelector('#p');
+
+        const clickForm = (event) => {
+            console.log(`Form currentTaget: ${event.currentTarget.id}`)
+            console.log(`Form target: ${event.target.id}`)
+        };
+        const clickDiv = (event) => {
+            console.log(`Div currentTaget: ${event.currentTarget.id}`)
+            console.log(`Div target: ${event.target.id}`)
+        };
+        const clickP = (event) => { 
+            console.log(`P currentTaget: ${event.currentTarget.id}`)
+            console.log(`P target: ${event.target.id}`)
+        };
+
+        formElement.addEventListener('click', clickForm)
+        divElement.addEventListener('click', clickDiv)
+        pElement.addEventListener('click', clickP)
+    </script>
+</body>
+</html>

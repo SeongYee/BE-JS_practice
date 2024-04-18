@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up Form Validation</title>
+    <style>
+      .warning-message {
+        color: red;
+      }
+    </style>
+</head>
+<body>
+  <h1>Sign up</h1>
+  <form id="signup-form">
+    <div>
+      <label for="username">username: </label>
+      <input type="text" id="username">
+    </div>
+
+    <div>
+      <label for="password1">password: </label>
+      <input type="password" id="password1">
+      <span id="warning1" class="warning-message"></span>
+    </div>
+
+    <div>
+      <label for="password2">password confirmation: </label>
+      <input type="password" id="password2">
+      <span id="warning2" class="warning-message"></span>
+    </div>
+    
+    <button type="button" onclick="validateForm()">Signup</button>
+  </form>
+
+  <script>
+    document.getElementById('password1').addEventListener('input', function(event) {
+      const password1 = document.getElementById('password1').value;
+      const warning1 = document.getElementById('warning1');
+      if (password1.length < 8) {
+        warning1.textContent = '비밀번호는 8자 이상이어야 합니다.';
+      } else {
+        warning1.textContent = '';
+      }
+    });
+
+    document.getElementById('password2').addEventListener('input', function(event) {
+      const password1 = document.getElementById('password1').value
+      const password2 = document.getElementById('password2').value;
+      const warning2 = document.getElementById('warning2');
+      if (password1 !== password2){
+        warning2.innerText = "비밀번호가 일치하지 않습니다";
+      } else {
+        warning2.innerText = '';
+      }
+    })
+    
+  </script>
+</body>
+</html>
